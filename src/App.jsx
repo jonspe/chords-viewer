@@ -47,6 +47,23 @@ function App() {
           ))}
         </div>
       </header>
+      <footer>
+        Made by{" "}
+        <a href="https://github.com/jonspe" target="_blank">
+          Joona Perasto
+        </a>
+        , utilizing{" "}
+        <a href="https://github.com/tombatossals" target="_blank">
+          David Rubert's
+        </a>{" "}
+        <a href="https://github.com/tombatossals/chords-db" target="_blank">
+          chords-db
+        </a>{" "}
+        and{" "}
+        <a href="https://github.com/tombatossals/react-chords" target="_blank">
+          react-chords
+        </a>
+      </footer>
     </div>
   )
 }
