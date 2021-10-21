@@ -1,22 +1,3 @@
-.App {
-  text-align: center;
-}
-
 .chord {
-  width: 400px;
-}
-
-.App-header {
-  background-color: #ffffff;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: black;
-}
-
-button {
-  font-size: calc(10px + 2vmin);
+  max-width: 50%;
 }
