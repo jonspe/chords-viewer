@@ -40,83 +40,82 @@ function App() {
 
   return (
     <div>
-      <header class="pt-5 pb-4 border-bottom">
-        <div class="container">
-          <div class="d-flex">
-            <h1>Chords Viewer</h1>
-          </div>
-          <div class="row">
-            <div class="col-xl">
-              {instrument === GUITAR && (
-                <Typeahead
-                  multiple
-                  options={mappedGuitarChords}
-                  highlightOnlyResult={true}
-                  labelKey={(option) => `${option.key}${option.suffix}`}
-                  onChange={(selected) => {
-                    setChords(selected)
-                  }}
-                />
-              )}
-              {instrument === UKULELE && (
-                <Typeahead
-                  multiple
-                  options={mappedUkuleleChords}
-                  highlightOnlyResult={true}
-                  labelKey={(option) => `${option.key}${option.suffix}`}
-                  onChange={(selected) => {
-                    setChords(selected)
-                  }}
-                />
-              )}
+      <div className="page-wrapper">
+        <header className="pt-5 pb-4 border-bottom">
+          <div className="container">
+            <div className="d-flex">
+              <h1>Chords Viewer</h1>
             </div>
-            <div class="col-md d-flex align-items-end flex-row-reverse">
-              <button
-                class={`btn ${
-                  instrument === GUITAR ? "btn-primary" : "btn-light"
-                }`}
-                onClick={() => {
-                  setChords([])
-                  setInstrument(GUITAR)
-                }}
-              >
-                Guitar
-              </button>
-              <button
-                class={`btn mr-2 ${
-                  instrument === UKULELE ? "btn-primary" : "btn-light"
-                }`}
-                onClick={() => {
-                  setChords([])
-                  setInstrument(UKULELE)
-                }}
-              >
-                Ukulele
-              </button>
+            <div className="row">
+              <div className="col-md mt-2">
+                {instrument === GUITAR && (
+                  <Typeahead
+                    multiple
+                    options={mappedGuitarChords}
+                    highlightOnlyResult={true}
+                    labelKey={(option) => `${option.key}${option.suffix}`}
+                    onChange={(selected) => {
+                      setChords(selected)
+                    }}
+                  />
+                )}
+                {instrument === UKULELE && (
+                  <Typeahead
+                    multiple
+                    options={mappedUkuleleChords}
+                    highlightOnlyResult={true}
+                    labelKey={(option) => `${option.key}${option.suffix}`}
+                    onChange={(selected) => {
+                      setChords(selected)
+                    }}
+                  />
+                )}
+              </div>
+              <div className="col-md mt-2 d-flex align-items-end flex-row-reverse">
+                <button
+                  className={`btn ${
+                    instrument === GUITAR ? "btn-primary" : "btn-light"
+                  }`}
+                  onClick={() => {
+                    setChords([])
+                    setInstrument(GUITAR)
+                  }}
+                >
+                  Guitar
+                </button>
+                <button
+                  className={`btn mr-2 ${
+                    instrument === UKULELE ? "btn-primary" : "btn-light"
+                  }`}
+                  onClick={() => {
+                    setChords([])
+                    setInstrument(UKULELE)
+                  }}
+                >
+                  Ukulele
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-      </header>
-      <div class="row p-5 container-fluid text-center justify-content-center">
-        {chords.map((chord) => (
-          <div class="col-sm chord">
-            <h2>
-              {chord.key}
-              <sub>{chord.suffix}</sub>
-            </h2>
-            <Chord chord={chord.positions[0]} instrument={instrument} />
-          </div>
-        ))}
+        </header>
+        <main className="row p-5 container-fluid text-center justify-content-center">
+          {chords.map((chord) => (
+            <div className="col-sm chord">
+              <h2>
+                {chord.key}
+                <sub>{chord.suffix}</sub>
+              </h2>
+              <Chord chord={chord.positions[0]} instrument={instrument} />
+            </div>
+          ))}
+        </main>
       </div>
-      <footer class="text-center p-3">
+      <footer className="text-center text-muted">
         Made by{" "}
         <a href="https://github.com/jonspe" target="_blank">
           Joona Perasto
-        </a>
-        , utilizing{" "}
-        <a href="https://github.com/tombatossals" target="_blank">
-          David Rubert's
         </a>{" "}
+        with{" "}
         <a href="https://github.com/tombatossals/chords-db" target="_blank">
           chords-db
         </a>{" "}
