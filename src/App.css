@@ -1,6 +1,6 @@
 .chord {
   max-width: 25%;
-  min-width: 360px;
+  min-width: max(300px, 15%);
 }
 
 html,
