@@ -47,19 +47,52 @@ function App() {
           </div>
           <div class="row">
             <div class="col-xl">
-              <Typeahead
-                multiple
-                options={mappedGuitarChords}
-                highlightOnlyResult={true}
-                labelKey={(option) => `${option.key}${option.suffix}`}
-                onChange={(selected) => {
-                  setChords(selected)
-                }}
-              />
+              {instrument === GUITAR && (
+                <Typeahead
+                  multiple
+                  options={mappedGuitarChords}
+                  highlightOnlyResult={true}
+                  labelKey={(option) => `${option.key}${option.suffix}`}
+                  onChange={(selected) => {
+                    setChords(selected)
+                  }}
+                />
+              )}
+              {instrument === UKULELE && (
+                <Typeahead
+                  multiple
+                  options={mappedUkuleleChords}
+                  highlightOnlyResult={true}
+                  labelKey={(option) => `${option.key}${option.suffix}`}
+                  onChange={(selected) => {
+                    setChords(selected)
+                  }}
+                />
+              )}
             </div>
             <div class="col-md d-flex align-items-end flex-row-reverse">
-              <button class="btn btn-primary active">Guitar</button>
-              <button class="btn btn-primary mr-2">Ukulele</button>
+              <button
+                class={`btn ${
+                  instrument === GUITAR ? "btn-primary" : "btn-light"
+                }`}
+                onClick={() => {
+                  setChords([])
+                  setInstrument(GUITAR)
+                }}
+              >
+                Guitar
+              </button>
+              <button
+                class={`btn mr-2 ${
+                  instrument === UKULELE ? "btn-primary" : "btn-light"
+                }`}
+                onClick={() => {
+                  setChords([])
+                  setInstrument(UKULELE)
+                }}
+              >
+                Ukulele
+              </button>
             </div>
           </div>
         </div>
