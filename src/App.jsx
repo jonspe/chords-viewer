@@ -51,6 +51,7 @@ function App() {
                 {instrument === GUITAR && (
                   <Typeahead
                     multiple
+                    placeholder="Select a chord..."
                     options={mappedGuitarChords}
                     highlightOnlyResult={true}
                     labelKey={(option) => `${option.key}${option.suffix}`}
@@ -62,6 +63,7 @@ function App() {
                 {instrument === UKULELE && (
                   <Typeahead
                     multiple
+                    placeholder="Select a chord..."
                     options={mappedUkuleleChords}
                     highlightOnlyResult={true}
                     labelKey={(option) => `${option.key}${option.suffix}`}
