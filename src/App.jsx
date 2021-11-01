@@ -73,9 +73,9 @@ function App() {
                   />
                 )}
               </div>
-              <div className="col-md mt-2 d-flex align-items-end flex-row-reverse">
+              <div className="col-md mt-2 d-flex justify-content-end align-items-start">
                 <button
-                  className={`btn ${
+                  className={`btn mr-2 ${
                     instrument === GUITAR ? "btn-primary" : "btn-light"
                   }`}
                   onClick={() => {
@@ -86,7 +86,7 @@ function App() {
                   Guitar
                 </button>
                 <button
-                  className={`btn mr-2 ${
+                  className={`btn ${
                     instrument === UKULELE ? "btn-primary" : "btn-light"
                   }`}
                   onClick={() => {
