@@ -112,16 +112,6 @@ function App() {
           ))}
         </main>
       </div>
-      <footer className="text-center text-muted">
-        Made by{" "}
-        <a href="https://github.com/jonspe" target="_blank">
-          Joona Perasto
-        </a>{" "}
-        with{" "}
-        <a href="https://github.com/tombatossals/react-chords" target="_blank">
-          react-chords
-        </a>
-      </footer>
     </div>
   )
 }
